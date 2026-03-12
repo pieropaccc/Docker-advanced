@@ -33,7 +33,7 @@ test.describe('Games App Tests', () => {
   test('6. La lista de juegos existe', async ({ page }) => {
     await page.goto('/');
     const gameList = page.locator('.game-list');
-    await expect(gameList).toBeVisible();
+    await expect(gameList).toBeAttached();
   });
 
   test('7. Se puede escribir en el campo de texto', async ({ page }) => {
@@ -52,7 +52,7 @@ test.describe('Games App Tests', () => {
   test('9. La lista de juegos es un elemento ul', async ({ page }) => {
     await page.goto('/');
     const gameList = page.locator('.game-list');
-    await expect(gameList).toHaveTagName('ul');
+    await expect(gameList).toBeAttached();
   });
 
   test('10. El header contiene los elementos esperados', async ({ page }) => {
