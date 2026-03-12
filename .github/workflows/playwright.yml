@@ -27,6 +27,10 @@ jobs:
           sleep 15
           docker compose ps
 
+      - name: Install npm dependencies
+        working-directory: ./tests
+        run: npm ci
+
       - name: Install Playwright Browsers
         working-directory: ./tests
         run: npx playwright install --with-deps chromium
